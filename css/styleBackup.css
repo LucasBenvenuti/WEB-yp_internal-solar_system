@@ -1,0 +1,629 @@
+@font-face{
+font-family:"Open Sans Bold";
+src:url("../fonts/OpenSans-Bold.eot?") format("eot"),
+url("../fonts/OpenSans-Bold.woff") format("woff"),
+url("../fonts/OpenSans-Bold.ttf") format("truetype"),
+url("../fonts/OpenSans-Bold.svg#OpenSans-Bold") format("svg");
+font-weight:bold;
+}
+@font-face{
+font-family:"Open Sans ExtraBold";
+src:url("../fonts/OpenSans-ExtraBold.eot?") format("eot"),
+url("../fonts/OpenSans-ExtraBold.woff") format("woff"),
+url("../fonts/OpenSans-ExtraBold.ttf") format("truetype"),
+url("../fonts/OpenSans-ExtraBold.svg#OpenSans-Extrabold") format("svg");
+font-weight:900;
+}
+@font-face{
+font-family:"Open Sans Light";
+src:url("../fonts/OpenSans-Light.eot?") format("eot"),
+url("../fonts/OpenSans-Light.woff") format("woff"),
+url("../fonts/OpenSans-Light.ttf") format("truetype"),
+url("../fonts/OpenSans-Light.svg#OpenSans-Light") format("svg");
+font-weight:100;
+}
+@font-face{
+font-family:"Open Sans";
+src:url("../fonts/OpenSans-Regular.eot?") format("eot"),
+url("../fonts/OpenSans-Regular.woff") format("woff"),
+url("../fonts/OpenSans-Regular.ttf") format("truetype"),
+url("../fonts/OpenSans-Regular.svg#OpenSans") format("svg");
+font-weight:normal;
+}
+
+html, body{
+    overflow-x:hidden;
+}
+
+body{
+    width:100%;
+    height:auto;
+    margin:0 auto;
+}
+a{
+color:inherit;
+text-decoration:none;
+outline:none !important;
+}
+
+/* PLANE DE FUNDO */
+#cont-sistema-planetario{
+    width:100vw;
+    height:100vh;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+}
+#galaxia-bg{
+    width:100vw;
+    height:100vh;
+    position:relative;
+    float:left;
+    margin:0px 0% 0px 0%;
+    background-color:rgba(155,150,205,0.7);
+    overflow:hidden;
+/*    background:url("../images/bg-galaxy.jpg");*/
+/*    background-position:center;*/
+/*    background-size:cover;*/
+/*    background-repeat:no-repeat;*/
+}
+
+/* TÍTULO */
+#titulo-sistema-planetario{
+    width:100%;
+    height:auto;
+    position:absolute;
+    top:5%;
+    left:0%;
+    font-family:"Open Sans Bold";
+    font-size:24px;
+    line-height:26px;
+    font-weight:500;
+    text-align:center;
+    letter-spacing:0.5px;
+    color:#ffffff;
+    z-index:50;
+}
+
+/* SELEÇÃO DE MODOS */
+#controles-laterais{
+    width:10%;
+    height:200px;
+    position:absolute;
+    top:5%;
+    right:2%;
+    background-color:lightcoral;
+}
+
+/* SELEÇÃO DE PLANETAS */
+#selecao-planetas{
+    width:100%;
+    height:auto;
+    position:absolute;
+    bottom:5%;
+    left:0%;
+    background-color:lightgreen;
+    text-align:center;
+    z-index:5;
+}
+.item-selecao{
+    width:auto;
+    height:auto;
+    display:inline-block;
+    margin:0px 0.5% 0px 0.5%;
+    font-family:"Open Sans Regular";
+    font-size:18px;
+    line-height:20px;
+    font-weight:300;
+    text-align:center;
+    letter-spacing:0.5px;
+    color:#2a2a2a;
+    opacity:0.7;
+    transition:0.2s ease-in-out all;
+    cursor:pointer;
+}
+.item-selecao:hover{
+    opacity:1;
+    transition:0.2s ease-in-out all;
+}
+.item-selecionado{
+    color:deepskyblue;
+    opacity:1;
+    transition:0.2s ease-in-out all;
+}
+
+/* PLANETAS */
+
+#centro-universo{
+    width:100vw;
+    height:100vh;
+    position:relative;
+    float:left;
+    margin:0px 0% 0px 0%;
+    z-index:4;
+    transform-style:preserve-3d;
+    transform:rotateX(75deg);
+    -webkit-transform:rotateX(75deg);
+}
+
+/* CENTRO PLANETAS */
+
+.sol-centro{
+    width:240px;
+    height:240px;
+    position:absolute;
+    top:50%;
+    left:50%;
+    margin-top:-120px;
+    margin:-120px;
+    transform-style:preserve-3d;
+/*
+    transform-style:preserve-3d;
+    transform:rotateX(-75deg);
+*/
+/*    transform:translate(-50%, -50%);*/
+}
+
+.mercurio-centro{
+    width:320px;
+    height:320px;
+    position:absolute;
+    top:50%;
+    left:50%;
+    margin-left:-160px;
+    margin-top:-160px;
+    border-radius:100%;
+    border:1px solid rgba(230,230,230,0.7);
+    transition:0.2s ease-in-out all;
+    -webkit-animation:orbit 5s linear infinite;
+    animation:orbit 5s linear infinite;
+    transform-style:preserve-3d;
+}
+.venus-centro{
+    width:400px;
+    height:400px;
+    position:absolute;
+    top:50%;
+    left:50%;
+    margin-left:-200px;
+    margin-top:-200px;
+    border-radius:100%;
+    border:1px solid rgba(230,230,230,0.7);
+    transition:0.2s ease-in-out all;
+    -webkit-animation:orbit 6.2s linear infinite;
+    animation:orbit 6.2s linear infinite;
+    transform-style:preserve-3d;
+}
+.terra-centro{
+    width:530px;
+    height:530px;
+    position:absolute;
+    top:50%;
+    left:50%;
+    margin-left:-265px;
+    margin-top:-265px;
+    border-radius:100%;
+    border:1px solid rgba(230,230,230,0.7);
+    transition:0.2s ease-in-out all;
+    -webkit-animation:orbit 6.9s linear infinite;
+    animation:orbit 6.9s linear infinite;
+    transform-style:preserve-3d;
+}
+
+#orbita-lua{
+    width:70px;
+    height:70px;
+    position:absolute;
+    top:50%;
+    left:50%;
+    margin-left:-36px;
+    margin-top:-36px;
+/*    transform-style:preserve-3d;*/
+/*
+    transform:rotateX(75deg);
+    -webkit-transform:rotateX(75deg);
+*/
+}
+
+.lua-centro{
+    width:70px;
+    height:70px;
+    position:absolute;
+    top:50%;
+    left:0%;
+    margin-left:-36px;
+    margin-top:-36px;
+    border-radius:100%;
+    border:1px solid rgba(230,230,230,0.7);
+    transition:0.2s ease-in-out all;
+    -webkit-animation:orbit 5s linear infinite;
+    animation:orbit 5s linear infinite;
+    transform-style:preserve-3d;
+}
+.marte-centro{
+    width:690px;
+    height:690px;
+    position:absolute;
+    top:50%;
+    left:50%;
+    margin-left:-345px;
+    margin-top:-345px;
+    border-radius:100%;
+    border:1px solid rgba(230,230,230,0.7);
+    transition:0.2s ease-in-out all;
+    -webkit-animation:orbit 7.4s linear infinite;
+    animation:orbit 7.4s linear infinite;
+    transform-style:preserve-3d;
+}
+.jupiter-centro{
+    width:810px;
+    height:810px;
+    position:absolute;
+    top:50%;
+    left:50%;
+    margin-left:-405px;
+    margin-top:-405px;
+    border-radius:100%;
+    border:1px solid rgba(230,230,230,0.7);
+    transition:0.2s ease-in-out all;
+    -webkit-animation:orbit 7.7s linear infinite;
+    animation:orbit 7.7s linear infinite;
+    transform-style:preserve-3d;
+}
+.saturno-centro{
+    width:1000px;
+    height:1000px;
+    position:absolute;
+    top:50%;
+    left:50%;
+    margin-left:-500px;
+    margin-top:-500px;
+    border-radius:100%;
+    border:1px solid rgba(230,230,230,0.7);
+    transition:0.2s ease-in-out all;
+    -webkit-animation:orbit 8s linear infinite;
+    animation:orbit 8s linear infinite;
+    transform-style:preserve-3d;
+}
+.urano-centro{
+    width:1200px;
+    height:1200px;
+    position:absolute;
+    top:50%;
+    left:50%;
+    margin-left:-600px;
+    margin-top:-600px;
+    border-radius:100%;
+    border:1px solid rgba(230,230,230,0.7);
+    transition:0.2s ease-in-out all;
+    -webkit-animation:orbit 9.5s linear infinite;
+    animation:orbit 9.5s linear infinite;
+    transform-style:preserve-3d;
+}
+.netuno-centro{
+    width:1500px;
+    height:1500px;
+    position:absolute;
+    top:50%;
+    left:50%;
+    margin-left:-750px;
+    margin-top:-750px;
+    border-radius:100%;
+    border:1px solid rgba(230,230,230,0.7);
+    transition:0.2s ease-in-out all;
+    -webkit-animation:orbit 10s linear infinite;
+    animation:orbit 10s linear infinite;
+    transform-style:preserve-3d;
+}
+
+.planeta-selecionado{
+    border:1px solid rgba(255,255,255,1);
+    transition:0.2s ease-in-out all;
+}
+/* FIM CENTRO PLANETAS */
+
+.planeta{
+    width:auto;
+    height:auto;
+    position:absolute;
+    top:50%;
+    left:0%;
+    transform-style:preserve-3d;
+    transform:rotateX(-90deg);
+    -webkit-transform:rotateX(-90deg);
+}
+
+.planeta-2{
+    width:auto;
+    height:auto;
+    position:absolute;
+    top:50%;
+    left:0%;
+    transform-style:preserve-3d;
+    transform:rotateX(90deg);
+    -webkit-transform:rotateX(90deg);
+}
+
+/* TAMANHO PLANETAS */
+
+.img-sol{
+    width:240px;
+    height:240px;
+    position:absolute;
+    border-radius:100%;
+    background-color:darkorange;
+/*    top:0%;*/
+/*    left:50%;*/
+    margin-top:-120px;
+/*    margin-left:-120px;*/
+/*    transform:translate(-50%, -50%);*/
+}
+.img-mercurio{
+    width:30px;
+    height:30px;
+    position:absolute;
+    background-color:lightcoral;
+    border-radius:100%;
+    top:50%;
+    left:0%;
+    margin-left:-15px;
+    margin-top:-15px;
+    -webkit-animation:reverse-orbit 5s linear infinite;
+    animation:reverse-orbit 5s linear infinite;
+}
+.img-venus{
+    width:40px;
+    height:40px;
+    position:absolute;
+    background-color:lightblue;
+    border-radius:100%;
+    top:50%;
+    left:100%;
+    margin-left:-20px;
+    margin-top:-20px;
+    -webkit-animation:reverse-orbit 6.2s linear infinite;
+    animation:reverse-orbit 6.2s linear infinite;
+}
+.img-terra{
+    width:45px;
+    height:45px;
+    position:absolute;
+    background-color:green;
+    border-radius:100%;
+    top:0%;
+    left:50%;
+    margin-left:-22.5px;
+    margin-top:-22.5px;
+    -webkit-animation:reverse-orbit 6.9s linear infinite;
+    animation:reverse-orbit 6.9s linear infinite;
+}
+.img-lua{
+    width:13px;
+    height:13px;
+    position:absolute;
+    background-color:blueviolet;
+    border-radius:100%;
+    top:0%;
+    left:50%;
+    margin-top:-6.5px;
+    margin-left:-6.5px;
+    -webkit-animation:reverse-orbit-2 1.9s linear infinite;
+    animation:reverse-orbit-2 1.9s linear infinite;
+}
+.img-marte{
+    width:55px;
+    height:55px;
+    background-color:blue;
+    border-radius:100%;
+    top:100%;
+    left:50%;
+    margin-left:-27.5px;
+    margin-top:-27.5px;
+    -webkit-animation:reverse-orbit 7.4s linear infinite;
+    animation:reverse-orbit 7.4s linear infinite;
+}
+.img-jupiter{
+    width:58px;
+    height:58px;
+    background-color:red;
+    border-radius:100%;
+    top:50%;
+    left:100%;
+    margin-left:-29px;
+    margin-top:-29px;
+    -webkit-animation:reverse-orbit 7.7s linear infinite;
+    animation:reverse-orbit 7.7s linear infinite;
+}
+.img-saturno{
+    width:58px;
+    height:58px;
+    background-color:sandybrown;
+    border-radius:100%;
+    top:50%;
+    left:0%;
+    margin-left:-29px;
+    margin-top:-29px;
+    -webkit-animation:reverse-orbit 8s linear infinite;
+    animation:reverse-orbit 8s linear infinite;
+}
+.img-saturno-anel-1{
+    width:110px;
+    height:110px;
+    position:absolute;
+    border:2px solid rgba(208, 149, 82, 0.7);
+    border-radius:100%;
+    top:0%;
+    left:0%;
+    margin-top:-57px;
+    margin-left:-57px;
+    transform-style:preserve-3d;
+    transform:rotateX(90deg);
+    
+}
+.img-saturno-anel-2{
+    width:75px;
+    height:75px;
+    position:absolute;
+    border:15px solid rgba(208, 149, 82, 0.7);
+    border-radius:100%;
+    top:-50%;
+    left:-50%;
+    margin-top:-37.5px;
+    margin-left:-37.5px;
+    transform-style:preserve-3d;
+    transform:rotateX(90deg);
+}
+.img-urano{
+    width:40px;
+    height:40px;
+    background-color:purple;
+    border-radius:100%;
+    top:100%;
+    left:50%;
+    margin-left:-20px;
+    margin-top:-20px;
+    -webkit-animation:reverse-orbit 9.5s linear infinite; /* Safari 4.0 - 8.0 */
+    animation:reverse-orbit 9.5s linear infinite;
+}
+.img-netuno{
+    width:30px;
+    height:30px;
+    background-color:crimson;
+    border-radius:100%;
+    top:50%;
+    left:100%;
+    margin-left:-15px;
+    margin-top:-15px;
+    -webkit-animation:reverse-orbit 10s linear infinite; /* Safari 4.0 - 8.0 */
+    animation:reverse-orbit 10s linear infinite;
+}
+
+/* FIM TAMANHO PLANETAS */
+
+.caixa-informacoes{
+    width:auto;
+    height:auto;
+    position:absolute;
+    pointer-events:none;
+}
+
+/* CAIXAS DE DISTÂNCIA */
+
+.dist-caixa-sol{
+    top:0px;
+    left:220px;
+/*    transform:translate(-50%, -50%);*/
+}
+.dist-caixa-mercurio{
+    top:-28px;
+    left:43px;
+/*    transform:translate(-50%, -50%);*/
+}
+.dist-caixa-venus{
+    top:-29px;
+    left:49px;
+/*    transform:translate(-50%, -50%);*/
+}
+.dist-caixa-terra{
+    top:-30px;
+    left:53px;
+/*    transform:translate(-50%, -50%);*/
+}
+.dist-caixa-marte{
+    top:-28px;
+    left:63px;
+/*    transform:translate(-50%, -50%);*/
+}
+.dist-caixa-jupiter{
+    top:-29px;
+    left:65px;
+/*    transform:translate(-50%, -50%);*/
+}
+.dist-caixa-saturno{
+    top:-29px;
+    left:65px;
+/*    transform:translate(-50%, -50%);*/
+}
+.dist-caixa-urano{
+    top:-30px;
+    left:50px;
+/*    transform:translate(-50%, -50%);*/
+}
+.dist-caixa-netuno{
+    top:-31px;
+    left:42px;
+/*    transform:translate(-50%, -50%);*/
+}
+
+/* FIM CAIXAS DE DISTÂNCIA */
+
+.linha-separacao{
+    width:15px;
+    height:30px;
+    position:absolute;
+    top:0px;
+    left:0px;
+    border-top:1px solid white;
+    border-left:1px solid white;
+    transform: skew(-45deg, 0deg);
+    box-shadow: inset 1px 1px black;
+}
+.cont-todas-informacoes{
+    width:auto;
+    height:auto;
+    position:absolute;
+    top:-40px;
+    left:35px;
+}
+
+.texto-informacao{
+    width:auto;
+    height:auto;
+    display:block;
+    text-shadow: 1px 1px 2px black;
+}
+
+.nome-planeta{
+    margin:0px 0% 0px 0%;
+    font-family:"Open Sans";
+    font-size:14px;
+    line-height:14px;
+    font-weight:500;
+    text-align:left;
+    letter-spacing:0.5px;
+    color:white;
+    white-space: nowrap;
+}
+.valor-planeta{
+    margin:3px 0% 3px 0%;
+    font-family:"Open Sans";
+    font-size:26px;
+    line-height:26px;
+    font-weight:500;
+    text-align:left;
+    letter-spacing:0.5px;
+    color:white;
+    white-space: nowrap;
+}
+.nome-dado-planeta{
+    margin:0px 0% 0px 0%;
+    font-family:"Open Sans";
+    font-size:12px;
+    line-height:12px;
+    font-weight:500;
+    text-align:left;
+    letter-spacing:0.5px;
+    color:white;
+    white-space: nowrap;
+}
+
+@keyframes orbit{
+    0%{transform:rotateZ(0deg);}
+    100%{transform:rotateZ(-360deg);}
+}
+
+@keyframes reverse-orbit{
+    0%{transform:rotateY(0deg);}
+    100%{transform:rotateY(-360deg);}
+}

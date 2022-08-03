@@ -1,0 +1,2255 @@
+@font-face{
+font-family:"Roboto Black";
+src:url("../fonts/Roboto-Black.ttf") format("truetype");
+/*font-weight:bold;*/
+}
+@font-face{
+font-family:"Roboto BlackItalic";
+src:url("../fonts/Roboto-BlackItalic.ttf") format("truetype");
+/*font-weight:900;*/
+}
+@font-face{
+font-family:"Roboto Bold";
+src:url("../fonts/Roboto-Bold.ttf") format("truetype");
+/*font-weight:100;*/
+}
+@font-face{
+font-family:"Roboto Bold Condensed";
+src:url("../fonts/Roboto-BoldCondensed.ttf") format("truetype");
+/*font-weight:normal;*/
+}
+@font-face{
+font-family:"Roboto Bold Condensed Italic";
+src:url("../fonts/Roboto-BoldCondensedItalic.ttf") format("truetype");
+/*font-weight:bold;*/
+}
+@font-face{
+font-family:"Roboto Bold Italic";
+src:url("../fonts/Roboto-BoldItalic.ttf") format("truetype");
+/*font-weight:900;*/
+}
+@font-face{
+font-family:"Roboto Condensed";
+src:url("../fonts/Roboto-Condensed.ttf") format("truetype");
+/*font-weight:100;*/
+}
+@font-face{
+font-family:"Roboto Condensed Italic";
+src:url("../fonts/Roboto-CondensedItalic.ttf") format("truetype");
+/*font-weight:normal;*/
+}
+@font-face{
+font-family:"Roboto Italic";
+src:url("../fonts/Roboto-Italic.ttf") format("truetype");
+/*font-weight:bold;*/
+}
+@font-face{
+font-family:"Roboto Light";
+src:url("../fonts/Roboto-Light.ttf") format("truetype");
+/*font-weight:900;*/
+}
+@font-face{
+font-family:"Roboto LightItalic";
+src:url("../fonts/Roboto-LightItalic.ttf") format("truetype");
+/*font-weight:100;*/
+}
+@font-face{
+font-family:"Roboto Medium";
+src:url("../fonts/Roboto-Medium.ttf") format("truetype");
+/*font-weight:normal;*/
+}
+@font-face{
+font-family:"Roboto Medium Italic";
+src:url("../fonts/Roboto-MediumItalic.ttf") format("truetype");
+/*font-weight:bold;*/
+}
+@font-face{
+font-family:"Roboto Regular";
+src:url("../fonts/Roboto-Regular.ttf") format("truetype");
+/*font-weight:900;*/
+}
+@font-face{
+font-family:"Roboto Thin";
+src:url("../fonts/Roboto-Thin.ttf") format("truetype");
+/*font-weight:100;*/
+}
+@font-face{
+font-family:"Roboto Thin Italic";
+src:url("../fonts/Roboto-ThinItalic.ttf") format("truetype");
+/*font-weight:normal;*/
+}
+
+html, body{
+    overflow-x:hidden;
+}
+
+body{
+    width:100%;
+    height:auto;
+    margin:0 auto;
+}
+a{
+color:inherit;
+text-decoration:none;
+outline:none !important;
+}
+
+#planetario-completo{
+    width:100vw;
+    height:100vh;
+    position:relative;
+    float:left;
+/*
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+*/
+    overflow:hidden;
+}
+
+/* ITENS SUPERIORES */
+
+#cont-completo-planetas-curiosidades{
+    width:100%;
+    height:auto;
+    position:relative;
+    float:left;
+    margin:0px 0% 0px 0%;
+    z-index:3;
+    display:block;
+}
+
+
+.menu-planetas-curiosidades-mobile{
+    width:4%;
+    height:6%;
+    position:absolute;
+    top:113%;
+    left:5%;
+    background:url('../images/arrowMenu.png');
+    background-position:center;
+    background-size:contain;
+    background-repeat:no-repeat;
+    transform:rotate(0deg);
+    z-index:8;
+    transition:0.2s ease-in-out all;
+    -webkit-animation:menu-selecionado 0.2s ease-in-out backwards;
+    animation:menu-selecionado 0.2s ease-in-out backwards;
+    display:none;
+}
+
+.abrir-menu-mobile{
+    left:23%;
+    transform:rotate(180deg);
+    -webkit-animation:menu-selecionado 0.2s ease-in-out forwards;
+    animation:menu-selecionado 0.2s ease-in-out forwards;
+    transition:0.2s ease-in-out all;
+}
+
+.bloquear-menu-mobile{
+    opacity:0.5;
+    pointer-events:none;
+    transition:0.2s ease-in-out all;
+}
+
+.esconder-menu-mobile{
+    opacity:0;
+    pointer-events:none;
+    transition:0.2s ease-in-out all;
+}
+
+.menu-planetas-funcionalidades-mobile{
+    width:4%;
+    height:6%;
+    position:absolute;
+    top:113%;
+    right:5%;
+    background:url('../images/arrowMenu.png');
+    background-position:center;
+    background-size:contain;
+    background-repeat:no-repeat;
+    transform:rotate(180deg);
+    z-index:11;
+    transition:0.2s ease-in-out all;
+    -webkit-animation:menu-selecionado 0.2s ease-in-out backwards;
+    animation:menu-selecionado 0.2s ease-in-out backwards;
+    display:none;
+}
+
+.abrir-menu-funcionalidades-mobile{
+    right:130px;
+    transform:rotate(0deg);
+    -webkit-animation:menu-selecionado 0.2s ease-in-out forwards;
+    animation:menu-selecionado 0.2s ease-in-out forwards;
+    transition:0.2s ease-in-out all;
+}
+
+.menu-itens-cont-mobile{
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:100%;
+    left:0%;
+    background-color:rgba(0,0,0,0);
+    opacity:0;
+    pointer-events:none;
+    transition:0.2s ease-in-out all;
+    display:none;
+}
+.menu-itens-cont-mobile-aberto{
+    opacity:1;
+    pointer-events:all;
+    transition:0.2s ease-in-out all;
+}
+
+.caixa-fechar-menu-mobile{
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0%;
+    left:0%;
+    opacity:0;
+    pointer-events:none;
+/*    background-color:red;*/
+    background-color:rgba(0,0,0,0);
+    transition:0.2s ease-in-out all;
+}
+
+.caixa-fechar-menu-mobile-aberto{
+    opacity:1;
+    pointer-events:all;
+    background-color:rgba(0,0,0,0.5);
+    transition:0.2s ease-in-out all;
+}
+
+.cont-itens-menu-mobile{
+    width:20%;
+    height:80%;
+    position:absolute;
+    overflow-y:scroll;
+    top:50%;
+    left:-30%;
+    transform:translate(0%, -50%);
+    opacity:0;
+    pointer-events:none;
+    background-color:rgba(255,255,255,0.2);
+    border-top-right-radius:25px;
+    border-bottom-right-radius:25px;
+    border:2px solid #ffffff;
+    border-left:0px;
+    transition:0.2s ease-in-out all;
+}
+
+.cont-itens-menu-mobile-abrir{
+    opacity:1;
+    pointer-events:all;
+    left:0%;
+    transition:0.2s ease-in-out all;
+}
+
+#menu-planetas-curiosidades{
+    width:100%;
+    height:54px;
+    position:relative;
+    float:left;
+    margin:0px 0% 0px 0%;
+    z-index:5;
+    overflow:hidden;
+    text-align:center;
+    background-color:#000000;
+    border-bottom:2px solid rgba(255,255,255,0.5);
+    display:block;
+}
+
+.item-planeta-curiosidades{
+    width:auto;
+    height:auto;
+    display:inline-block;
+    margin:0px 1% 0px 1%;
+    font-family:"Roboto Regular";
+    font-size:20px;
+    text-align:center;
+    font-weight:400;
+    color:rgba(255,255,255,1);
+    line-height:54px;
+    opacity:0.5;
+/*    pointer-events:all;*/
+    transition:0.2s ease-in-out all;
+    cursor:pointer;
+}
+.item-planeta-curiosidades:hover{
+    opacity:1;
+    transition:0.2s ease-in-out all;
+}
+
+.item-planeta-curiosidades-selecionado{
+    pointer-events:none;
+    opacity:1;
+    transition:0.2s ease-in-out all;
+}
+
+.separacao-itens-curiosidades{
+    width:2px;
+    height:37.8px;
+    display:inline-block;
+    margin:5.4px -2px -10.8px -2px;
+    text-align:center;
+    background-color:#a2a2a2;
+    opacity:0.6;
+    cursor:default;
+    pointer-events:none;
+}
+
+.container-lightbox-curiosidades{
+    width:100%;
+    height:1026px;
+    position:absolute;
+/*    margin-top:-1026px;*/
+    top:100%;
+    overflow-x:hidden;
+    overflow-y:scroll;
+    background-color:rgba(255,255,255,1);
+    z-index:4;
+    opacity:0;
+    pointer-events:none;
+    transition:0.2s ease-in-out all;
+}
+.container-lightbox-curiosidades-aberto{
+    opacity:1;
+    pointer-events:all;
+    transition:0.2s ease-in-out all;
+}
+
+.lightbox-curiosidades-class{
+    width:94%;
+    height:auto;
+    position:relative;
+    float:left;
+    margin:0px 3% 0px 3%;
+    z-index:4;
+    opacity:0;
+    pointer-events:none;
+    transition:0.2s ease-in-out all;
+}
+.lightbox-curiosidades-class-aparecer{
+    opacity:1;
+    pointer-events:all;
+    transition:0.2s ease-in-out all;
+}
+
+.lightbox-curiosidades-class-desaparecer{
+    display:none;
+    transition:0.2s ease-in-out all;
+}
+
+
+#titulo-lightbox-curiosidades{
+    width:100%;
+    height:auto;
+    position:relative;
+    float:left;
+    margin:35px 0% 0px 0%;
+    font-family:"Roboto Regular";
+    font-size:55px;
+    font-weight:400;
+    color:#a1a1a1;
+    line-height:50px;
+    text-align:center;
+    letter-spacing:0.5px;
+    pointer-events:none;
+    transition:0.2s ease-in-out all;
+}
+#fechar-lightbox-curiosidades{
+    width:30px;
+    height:30px;
+    position:absolute;
+    top:2%;
+    right:0%;
+    background:url('../images/fecharBtn.png');
+    background-size:contain;
+    background-repeat:no-repeat;
+    background-position:center;
+    opacity:0.5;
+    transition:0.2s ease-in-out all;
+    cursor:pointer;
+}
+#fechar-lightbox-curiosidades:hover{
+    opacity:1;
+    transition:0.2s ease-in-out all;
+    cursor:pointer;
+}
+#corpo-lightbox-curiosidades{
+    width:100%;
+    height:auto;
+    position:relative;
+    float:left;
+    margin:25px 0% 0px 0%;
+}
+
+.cont-box-corpo-lightbox{
+    width:100%;
+    height:auto;
+    position:relative;
+    float:left;
+    margin:0px 0% 40px 0%;
+}
+#cont-imagem-descricao-lightbox{
+    width:17%;
+    height:auto;
+    position:relative;
+    float:left;
+    margin:0px 1.5% 0px 0%;
+}
+.imagem-descricao-lightbox{
+    width:100%;
+    height:300px;
+    position:relative;
+    float:left;
+    margin:0px 0% 0px 0%;
+}
+
+.imagem-descricao-sol{
+    background:url('../images/solDesc.jpg');
+    background-position:center;
+    background-size:contain;
+    background-repeat:no-repeat;
+}
+.imagem-descricao-mercurio{
+    background:url('../images/mercurioDesc.jpg');
+    background-position:center;
+    background-size:contain;
+    background-repeat:no-repeat;
+}
+.imagem-descricao-venus{
+    background:url('../images/venusDesc.jpg');
+    background-position:center;
+    background-size:contain;
+    background-repeat:no-repeat;
+}
+.imagem-descricao-terra{
+    background:url('../images/terraDesc.jpg');
+    background-position:center;
+    background-size:contain;
+    background-repeat:no-repeat;
+}
+.imagem-descricao-lua{
+    background:url('../images/luaDesc.jpg');
+    background-position:center;
+    background-size:contain;
+    background-repeat:no-repeat;
+}
+.imagem-descricao-marte{
+    background:url('../images/marteDesc.jpg');
+    background-position:center;
+    background-size:contain;
+    background-repeat:no-repeat;
+}
+.imagem-descricao-jupiter{
+    background:url('../images/jupiterDesc.jpg');
+    background-position:center;
+    background-size:contain;
+    background-repeat:no-repeat;
+}
+.imagem-descricao-saturno{
+    background:url('../images/saturnoDesc.jpg');
+    background-position:center;
+    background-size:contain;
+    background-repeat:no-repeat;
+}
+.imagem-descricao-urano{
+    background:url('../images/uranoDesc.jpg');
+    background-position:center;
+    background-size:contain;
+    background-repeat:no-repeat;
+}
+.imagem-descricao-netuno{
+    background:url('../images/netunoDesc.jpg');
+    background-position:center;
+    background-size:contain;
+    background-repeat:no-repeat;
+}
+
+
+
+#legenda-descricao-lightbox{
+    width:100%;
+    height:auto;
+    position:relative;
+    float:left;
+    margin:7px 0% 7px 0%;
+    font-family:"Roboto Regular";
+    font-size:14px;
+    font-weight:400;
+    color:#2a2a2a;
+    line-height:22px;
+    text-align:center;
+    letter-spacing:0.5px;
+    pointer-events:none;
+}
+
+.titulo-topicos-lightbox{
+    width:auto;
+    height:auto;
+    display:block;
+    margin:0px 0% 0px 0%;
+    font-family:"Roboto Bold";
+    font-size:16px;
+    font-weight:400;
+    color:#000000;
+    line-height:20px;
+    text-align:justify;
+    letter-spacing:0.5px;
+}
+.corpo-topicos-lightbox{
+    width:auto;
+    height:auto;
+    display:block;
+    margin:0px 0% 0px 0%;
+    font-family:"Roboto Regular";
+    font-size:16px;
+    font-weight:400;
+    color:#000000;
+    line-height:20px;
+    text-align:justify;
+    letter-spacing:0.5px;
+}
+
+.tabela-lightbox{
+    width:auto;
+    height:auto;
+    position:relative;
+    float:left;
+    margin:10px 0% 10px 0%;
+}
+.txt-topicos-tabela-lightbox{
+    width:auto;
+    height:auto;
+    margin:0px 0% 0px 0%;
+    padding:10px 15px;
+    font-size:14px;
+    font-weight:400;
+    color:#000000;
+    line-height:20px;
+    letter-spacing:0.5px;
+    border-width:1px;
+    border-color:#ffffff;
+    background:rgba(0,104,177,0.28);
+}
+.pergunta-tabela-lightbox{
+    font-family:"Roboto Bold";
+    text-align:right;
+}
+.resposta-tabela-lightbox{
+    font-family:"Roboto Regular";
+    text-align:left;
+}
+
+#imagens-recentes-lightbox{
+    width:100%;
+    height:auto;
+    position:relative;
+    float:left;
+    margin:20px 0% 0px 0%;
+}
+
+.box-imagem{
+    width:auto;
+    height:180px;
+    display:inline-block;
+    margin:0px 1px 1px 0%;
+    opacity:0.7;
+    transition:0.2s ease-in-out all;
+}
+.box-imagem:hover{
+    opacity:1;
+    transition:0.2s ease-in-out all;
+}
+
+.texto-fonte{
+    font-family:"Roboto Regular";
+    font-size:16px;
+    font-weight:400;
+    color:#000000;
+    line-height:20px;
+    text-align:justify;
+    letter-spacing:0.5px;
+    opacity:0.7;
+    transition:0.2s ease-in-out all;
+}
+
+.texto-fonte:hover{
+    opacity:1;
+    transition:0.2s ease-in-out all;
+}
+
+/* SISTEMA SOLAR */
+
+#cont-completo-sistema-planetario{
+    width:100%;
+    height:auto;
+    position:relative;
+    float:left;
+    margin:0px 0% 0px 0%;
+    opacity:1;
+    z-index:2;
+}
+
+#titulo-planetario{
+    width:auto;
+    height:auto;
+    position:absolute;
+    top:5%;
+    left:50%;
+    transform:translate(-50%, 0%);
+    font-family:"Roboto Bold";
+    font-size:28px;
+    text-align:left;
+    letter-spacing:0.5px;
+    font-weight:500;
+    line-height:30px;
+    color:rgb(255,255,255);
+    z-index:10;
+    text-align:center;
+    border-radius:5px;
+    pointer-events:none;
+}
+
+.cont-funcionalidades-btns-direita{
+    width:190px;
+    height:auto;
+    position:absolute;
+    top:3%;
+    right:1%;
+    z-index:8;
+    text-align:center;
+    border-radius:5px;
+    transform:scale(0.8) translate(0px, -30px);
+}
+
+.cont-funcionalidades-btns-direita-aberto{
+    opacity:0;
+    pointer-events:none;
+    right:-9%;
+    transition:0.2s ease-in-out all;
+}
+
+.funcionalidades-fundo-funcao{
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0%;
+    left:0%;
+    opacity:0;
+    background-color:rgba(0,0,0,0);
+    z-index:10;
+    pointer-events:none;
+    transition:0.2s ease-in-out all;
+    display:none;
+}
+
+.funcionalidades-fundo-funcao-aberto{
+    opacity:1;
+    background-color:rgba(0,0,0,0.5);
+    pointer-events:all;
+    transition:0.2s ease-in-out all;
+}
+
+#cont-btn-modo-2d-3d{
+    width:170px;
+    height:auto;
+    position:relative;
+    float:left;
+    border:3px solid #ffffff;
+    border-radius:10px;
+    opacity:0.5;
+    transition:0.2s ease-in-out all;
+    cursor:pointer;
+    display:block;
+}
+#cont-btn-modo-2d-3d:hover{
+    transition:0.2s ease-in-out all;
+    opacity:1;
+}
+
+.btn-modo-2d-img{
+    width:40px;
+    height:40px;
+    position:relative;
+    margin:3px 3% 3px 3%;
+    background:url("../images/quadrado_2d.png");
+    background-position:center;
+    background-repeat:no-repeat;
+    background-size:contain;
+    transition:0.2s ease-in-out all;
+    pointer-events:none;
+}
+
+.btn-modo-3d-img{
+    width:40px;
+    height:40px;
+    position:relative;
+    margin:3px 3% 3px 3%;
+    background:url("../images/cubo_3d.png");
+    background-position:center;
+    background-repeat:no-repeat;
+    background-size:contain;
+    transition:0.2s ease-in-out all;
+    pointer-events:none;
+}
+
+#cont-btn-modo-zoom{
+    width:170px;
+    height:auto;
+    position:relative;
+    float:left;
+    margin-top:35px;
+    border:3px solid #ffffff;
+    border-radius:10px;
+    opacity:0.5;
+    transition:0.2s ease-in-out all;
+    cursor:pointer;
+}
+#cont-btn-modo-zoom:hover{
+    transition:0.2s ease-in-out all;
+    opacity:1;
+}
+.btn-modo-zoomIn-img{
+    width:40px;
+    height:40px;
+    position:relative;
+    margin:3px 3% 3px 3%;
+    background:url("../images/lupa_mais.png");
+    background-position:center;
+    background-repeat:no-repeat;
+    background-size:contain;
+    transition:0.2s ease-in-out all;
+    pointer-events:none;
+}
+.btn-modo-zoomOut-img{
+    width:40px;
+    height:40px;
+    position:relative;
+    margin:3px 3% 3px 3%;
+    background:url("../images/lupa_menos.png");
+    background-position:center;
+    background-repeat:no-repeat;
+    background-size:contain;
+    transition:0.2s ease-in-out all;
+    pointer-events:none;
+}
+
+#cont-btn-modo-metade{
+    width:170px;
+    height:auto;
+    position:relative;
+    float:left;
+    margin-top:35px;
+    border:3px solid #ffffff;
+    border-radius:10px;
+    opacity:0.5;
+    transition:0.2s ease-in-out all;
+    cursor:pointer;
+}
+#cont-btn-modo-metade:hover{
+    transition:0.2s ease-in-out all;
+    opacity:1;
+}
+.cont-opcao-modo-metade{
+    width:40px;
+    height:40px;
+    position:relative;
+    float:left;
+    margin:3px 3% 3px 3%;
+    border-radius:10px;
+    transition:0.2s ease-in-out all;
+}
+
+.cont-opcao-modo-circulo-completo{
+    width:30px;
+    height:30px;
+    position:relative;
+    float:left;
+    margin:2px 5% 2px 3%;
+    border-radius:50px;
+    border:3px solid #ffffff;
+}
+
+.cont-opcao-modo-circulo-metade{
+    width:15px;
+    height:30px;
+    position:relative;
+    float:left;
+    margin:3px 0% 4px 40%;
+    border-bottom-right-radius:44px;
+    border-top-right-radius:44px;
+    border:3px solid #ffffff;
+}
+
+.lado-txt-modo-esq{
+    text-align:left;
+    float:left;
+}
+.lado-txt-modo-dir{
+    text-align:right;
+    float:right;
+}
+
+.circulo-selecao-modo{
+    background-color:rgba(255,255,255,1);
+    border-radius:5px;
+    transition:0.2s ease-in-out all;
+}
+
+.circulo-selecao-modo-maior{
+    padding:5px 8px 5px 8px;
+    background-color:rgba(255,255,255,1);
+    border-radius:10px;
+    transition:0.2s ease-in-out all;
+}
+
+#btn-velocidade{
+    width:auto;
+    height:auto;
+    position:relative;
+    float:left;
+    margin:30px 0% 0px 0%;
+    opacity:0.5;
+    transition:0.2s ease-in-out all;
+    cursor:pointer;
+}
+#btn-velocidade:hover{
+    opacity:1;
+    transition:0.2s ease-in-out all;
+}
+
+#btn-tamanho{
+    width:auto;
+    height:auto;
+    position:relative;
+    float:left;
+    margin:20px 0% 0px 0%;
+    opacity:0.5;
+    transition:0.2s ease-in-out all;
+    cursor:pointer;
+}
+#btn-tamanho:hover{
+    opacity:1;
+    transition:0.2s ease-in-out all;
+}
+
+#btn-distancia{
+    width:auto;
+    height:auto;
+    position:relative;
+    float:left;
+    margin:20px 0% 0px 0%;
+    opacity:0.5;
+    transition:0.2s ease-in-out all;
+    cursor:pointer;
+}
+#btn-distancia:hover{
+    opacity:1;
+    transition:0.2s ease-in-out all;
+}
+
+.circulo-selecao-modos{
+    width:30px;
+    height:30px;
+    position:relative;
+    float:left;
+    margin:0px 0% 0px 0%;
+    border:3px solid #ffffff;
+    border-radius:10px;
+}
+
+.circulo-interno-modo{
+    width:26px;
+    height:26px;
+    position:relative;
+    float:left;
+    margin:2px 1px 1px 2px;
+    background-color:#ffffff;
+    border-radius:5px;
+    opacity:0;
+    transition:0.2s ease-in-out all;
+}
+
+.circulo-interno-modo-selecao{
+    opacity:1;
+    transition:0.2s ease-in-out all;
+}
+
+.texto-selecao-modos{
+    width:auto;
+    height:auto;
+    position:relative;
+    float:left;
+    margin:0px 0% 0px 0%;
+    font-family:"Roboto Regular";
+    font-size:20px;
+    text-align:left;
+    letter-spacing:0.5px;
+    font-weight:500;
+    line-height:24px;
+    color:rgb(255,255,255);
+    padding:5px 5px 5px 8px;
+    border-radius:5px;
+}
+
+#cont-btns-baixo{
+    width:100%;
+    height:auto;
+    position:absolute;
+    bottom:5%;
+    left:0%;
+    transform:translate(0%,-50%);
+    text-align:center;
+    z-index:8;
+}
+.item-planeta{
+    width:auto;
+    height:auto;
+    display:inline-block;
+    margin:2px 4px 2px 4px;
+    font-family:"Roboto Regular";
+    font-size:22px;
+    text-align:left;
+    letter-spacing:0.5px;
+    font-weight:500;
+    line-height:24px;
+    color:rgb(255,255,255,0.5);
+    cursor:pointer;
+    transition:0.2s ease-in-out all;
+}
+.item-planeta:hover{
+    color:rgb(255,255,255,1);
+    transition:0.2s ease-in-out all;
+}
+
+.item-planeta-selecionado{
+    color:rgb(255,255,255,1);
+    transition:0.2s ease-in-out all;
+}
+
+#cont-galaxia{
+    width:100%;
+    height:1026px;
+    position:relative;
+    float:left;
+    margin:0px 0% 0px 0%;
+    overflow:hidden;
+    background-color:rgba(0,0,0,1);
+}
+
+.dinamica-escala-galaxia{
+    width:auto;
+    height:auto;
+    position:relative;
+    float:left;
+    top:50%;
+    left:50%;
+    margin:0px 0% 0px 0%;
+    transform:scale(1, 1);
+}
+
+
+.galaxia_comp{
+    width:100%;
+    height:100%;
+    position:relative;
+    float:left;
+    background:url("../images/FundoTeste_2.png");
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size:cover;
+    margin:0px 0% 0px 0%;
+    transform:scale(1,1);
+    transition:0.2s ease-in-out all;
+}
+
+.galaxia-2x-escala{
+    transform:scale(2,2);
+    margin:0px 0% 0px -50%;
+    transition:0.2s ease-in-out all;
+}
+
+.galaxia_2d{
+    background:url('../images/FundoTeste.png');
+    background-position:center;
+    background-size:cover;
+    background-repeat:no-repeat;
+    transition:0.2s ease-in-out all;
+}
+
+.sistemaSolar-class{
+    width:90%;
+    height:90%;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%) rotateX(75deg);
+    transform-style:preserve-3d;
+    transition:0.2s ease-in-out all;
+}
+
+.sol-orbita{
+    width:36px;
+    height:36px;
+    position:absolute;
+    margin-top:-18px;
+    margin-left:-18px;
+    top:50%;
+    left:50%;
+    transform-style:preserve-3d;
+    transform:rotateX(-90deg);
+    z-index:3;
+    transition:0.2s ease-in-out all;
+}
+
+.mercurio-orbita{
+    width:150px;
+    height:150px;
+    position:absolute;
+    margin-top:-75px;
+    margin-left:-75px;
+    -webkit-animation:orbit 3s linear infinite;
+    animation:orbit 3s linear infinite;
+    transform-style:preserve-3d;
+    z-index:3;
+    transition:0.2s ease-in-out all;
+}
+.mercurio-orbita-parado{
+    width:150px;
+    height:150px;
+    position:absolute;
+    margin-top:-75px;
+    margin-left:-75px;
+    transform-style:preserve-3d;
+    z-index:3;
+    transition:0.2s ease-in-out all;
+}
+
+.venus-orbita{
+    width:180px;
+    height:180px;
+    position:absolute;
+    margin-top:-90px;
+    margin-left:-90px;
+    -webkit-animation:orbit 7.4s linear infinite;
+    animation:orbit 7.4s linear infinite;
+    transform-style:preserve-3d;
+    z-index:3;
+    transition:0.2s ease-in-out all;
+}
+.venus-orbita-parado{
+    width:180px;
+    height:180px;
+    position:absolute;
+    margin-top:-90px;
+    margin-left:-90px;
+    transform-style:preserve-3d;
+    z-index:3;
+    transition:0.2s ease-in-out all;
+}
+
+.terra-orbita{
+    width:220px;
+    height:220px;
+    position:absolute;
+    margin-top:-110px;
+    margin-left:-110px;
+    -webkit-animation:orbit 12s linear infinite;
+    animation:orbit 12s linear infinite;
+    transform-style:preserve-3d;
+    z-index:3;
+    transition:0.2s ease-in-out all;
+}
+.terra-orbita-parado{
+    width:220px;
+    height:220px;
+    position:absolute;
+    margin-top:-110px;
+    margin-left:-110px;
+    transform-style:preserve-3d;
+    transition:0.2s ease-in-out all;
+    z-index:3;
+    transition:0.2s ease-in-out all;
+}
+
+.lua-orbita{
+    width:18px;
+    height:18px;
+    position:absolute;
+    margin-top:-10px;
+    margin-left:-10px;
+    -webkit-animation:orbit-lua 1s linear infinite;
+    animation:orbit-lua 1s linear infinite;
+    transform-style:preserve-3d;
+    z-index:3;
+    transition:0.2s ease-in-out all;
+}
+.lua-orbita-parado{
+    width:18px;
+    height:18px;
+    position:absolute;
+    margin-top:-10px;
+    margin-left:-10px;
+    transform:rotateX(90deg);
+    transform-style:preserve-3d;
+    z-index:3;
+    transition:0.2s ease-in-out all;
+}
+
+.marte-orbita{
+    width:256px;
+    height:256px;
+    position:absolute;
+    margin-top:-128px;
+    margin-left:-128px;
+    -webkit-animation:orbit 22s linear infinite;
+    animation:orbit 22s linear infinite;
+    transform-style:preserve-3d;
+    z-index:3;
+    transition:0.2s ease-in-out all;
+}
+.marte-orbita-parado{
+    width:256px;
+    height:256px;
+    position:absolute;
+    margin-top:-128px;
+    margin-left:-128px;
+    transform-style:preserve-3d;
+    z-index:3;
+    transition:0.2s ease-in-out all;
+}
+
+.jupiter-orbita{
+    width:430px;
+    height:430px;
+    position:absolute;
+    margin-top:-215px;
+    margin-left:-215px;
+    -webkit-animation:orbit 142s linear infinite;
+    animation:orbit 142s linear infinite;
+    transform-style:preserve-3d;
+    z-index:3;
+    transition:0.2s ease-in-out all;
+}
+.jupiter-orbita-parado{
+    width:430px;
+    height:430px;
+    position:absolute;
+    margin-top:-215px;
+    margin-left:-215px;
+    transform-style:preserve-3d;
+    z-index:3;
+    transition:0.2s ease-in-out all;
+}
+
+.saturno-orbita{
+    width:670px;
+    height:670px;
+    position:absolute;
+    margin-top:-335px;
+    margin-left:-335px;
+    -webkit-animation:orbit 340s linear infinite;
+    animation:orbit 340s linear infinite;
+    transform-style:preserve-3d;
+    z-index:3;
+    transition:0.2s ease-in-out all;
+}
+.saturno-orbita-parado{
+    width:670px;
+    height:670px;
+    position:absolute;
+    margin-top:-335px;
+    margin-left:-335px;
+    transform-style:preserve-3d;
+    z-index:3;
+    transition:0.2s ease-in-out all;
+}
+
+.urano-orbita{
+    width:1150px;
+    height:1150px;
+    position:absolute;
+    margin-top:-575px;
+    margin-left:-575px;
+    -webkit-animation:orbit 1000s linear infinite;
+    animation:orbit 1000s linear infinite;
+    transform-style:preserve-3d;
+    z-index:3;
+    transition:0.2s ease-in-out all;
+}
+.urano-orbita-parado{
+    width:1150px;
+    height:1150px;
+    position:absolute;
+    margin-top:-575px;
+    margin-left:-575px;
+    transform-style:preserve-3d;
+    z-index:3;
+    transition:0.2s ease-in-out all;
+}
+
+.netuno-orbita{
+    width:1740px;
+    height:1740px;
+    position:absolute;
+    margin-top:-870px;
+    margin-left:-870px;
+    -webkit-animation:orbit 2000s linear infinite;
+    animation:orbit 2000s linear infinite;
+    transform-style:preserve-3d;
+    z-index:3;
+    transition:0.2s ease-in-out all;
+}
+.netuno-orbita-parado{
+    width:1740px;
+    height:1740px;
+    position:absolute;
+    margin-top:-870px;
+    margin-left:-870px;
+    transform-style:preserve-3d;
+    z-index:3;
+    transition:0.2s ease-in-out all;
+}
+
+.orbita-planeta{
+    top:50%;
+    left:50%;
+    border:0px solid rgba(0,0,0,0);
+}
+
+.orbita-planeta-parado{
+    top:50%;
+    left:50%;
+    border-radius:100%;
+    border:1px solid rgba(255,255,255,0.2);
+}
+
+.orbita-planeta-lua{
+    top:50%;
+    left:50%;
+    border-radius:100%;
+    border:1px solid rgba(255,255,255,0.2);
+}
+
+.planeta-selecionado-parado{
+    border:1px solid rgba(255,255,255,1);
+    z-index:4;
+}
+.planeta-selecionado{
+    z-index:5;
+}
+
+.pos{
+    width:20px;
+    height:20px;
+    position:absolute;    
+    margin-top:-10px;
+    margin-left:-10px;
+    transform-style:preserve-3d;
+}
+
+.direcao-mercurio{
+    top:0%;
+    left:50%;
+    -webkit-animation:inverse 3s linear infinite;
+    animation:inverse 3s linear infinite;
+    opacity:1;
+    pointer-events:none;
+    transition:0.2s ease-in-out all;
+}
+.direcao-mercurio-parado{
+    top:50%;
+    left:100%;
+    transform:rotateX(-90deg);
+    opacity:0;
+    pointer-events:none;
+    transition:0.2s ease-in-out all;
+}
+
+.direcao-venus{
+    top:50%;
+    left:0%;
+    -webkit-animation:inverse 7.4s linear infinite;
+    animation:inverse 7.4s linear infinite;
+    opacity:1;
+    pointer-events:none;
+    transition:0.2s ease-in-out all;
+}
+.direcao-venus-parado{
+    top:50%;
+    left:100%;
+    transform:rotateX(-90deg);
+    opacity:0;
+    pointer-events:none;
+    transition:0.2s ease-in-out all;
+}
+
+.direcao-terra{
+    top:50%;
+    left:100%;
+    -webkit-animation:inverse 12s linear infinite;
+    animation:inverse 12s linear infinite;
+    opacity:1;
+    pointer-events:none;
+    transition:0.2s ease-in-out all;
+}
+.direcao-terra-parado{
+    top:50%;
+    left:100%;
+    transform:rotateX(-90deg);
+    opacity:0;
+    pointer-events:none;
+    transition:0.2s ease-in-out all;
+}
+
+.direcao-lua{
+    top:50%;
+    left:0%;
+    -webkit-animation:inverse 1s linear infinite;
+    animation:inverse 1s linear infinite;
+    opacity:1;
+    pointer-events:none;
+    transition:0.2s ease-in-out all;
+}
+.direcao-lua-parado{
+    top:50%;
+    left:100%;
+    transform:rotateX(-90deg);
+    opacity:0;
+    pointer-events:none;
+    transition:0.2s ease-in-out all;
+}
+
+.direcao-marte{
+    top:100%;
+    left:50%;
+    -webkit-animation:inverse 22s linear infinite;
+    animation:inverse 22s linear infinite;
+    opacity:1;
+    pointer-events:none;
+    transition:0.2s ease-in-out all;
+}
+.direcao-marte-parado{
+    top:50%;
+    left:100%;
+    transform:rotateX(-90deg);
+    opacity:0;
+    pointer-events:none;
+    transition:0.2s ease-in-out all;
+}
+
+.direcao-jupiter{
+    top:0%;
+    left:50%;
+    -webkit-animation:inverse 142s linear infinite;
+    animation:inverse 142s linear infinite;
+    opacity:1;
+    pointer-events:none;
+    transition:0.2s ease-in-out all;
+}
+.direcao-jupiter-parado{
+    top:50%;
+    left:100%;
+    transform:rotateX(-90deg);
+    opacity:0;
+    pointer-events:none;
+    transition:0.2s ease-in-out all;
+}
+
+.direcao-saturno{
+    top:100%;
+    left:50%;
+    -webkit-animation:inverse 340s linear infinite;
+    animation:inverse 340s linear infinite;
+    opacity:1;
+    pointer-events:none;
+    transition:0.2s ease-in-out all;
+}
+.direcao-saturno-parado{
+    top:50%;
+    left:100%;
+    transform:rotateX(-90deg);
+    opacity:0;
+    pointer-events:none;
+    transition:0.2s ease-in-out all;
+}
+
+.direcao-urano{
+    top:50%;
+    left:100%;
+    -webkit-animation:inverse 1000s linear infinite;
+    animation:inverse 1000s linear infinite;
+    opacity:1;
+    pointer-events:none;
+    transition:0.2s ease-in-out all;
+}
+.direcao-urano-parado{
+    top:50%;
+    left:100%;
+    transform:rotateX(-90deg);
+    opacity:0;
+    pointer-events:none;
+    transition:0.2s ease-in-out all;
+}
+
+.direcao-netuno{
+    top:50%;
+    left:0%;
+    -webkit-animation:inverse 2000s linear infinite;
+    animation:inverse 2000s linear infinite;
+    opacity:1;
+    pointer-events:none;
+    transition:0.2s ease-in-out all;
+}
+.direcao-netuno-parado{
+    top:50%;
+    left:100%;
+    transform:rotateX(-90deg);
+    opacity:0;
+    pointer-events:none;
+    transition:0.2s ease-in-out all;
+}
+
+.direcao-desaparecer{
+    opacity:0;
+    transition:0.2s ease-in-out all;
+}
+
+.direcao-parado-aparecer{
+    opacity:1;
+    transition:0.2s ease-in-out all;
+}
+
+.sol-planeta{
+    width:36px;
+    height:36px;
+    position:relative;
+    float:left;
+    border-radius:100%;
+    transform:rotateX(0deg);
+    transition:0.2s ease-in-out all;
+    box-shadow:0 0 60px rgba(255, 160, 60, 0.4);
+    background:url("../images/sol.png");
+    background-size:contain;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+.img-mercurio-class{
+    width:7px;
+    height:7px;
+    position:relative;
+    float:left;
+    top:50%;
+    left:50%;
+    margin-top:-3.5px;
+    margin-left:-3.5px;
+    border-radius:100%;
+    transform:rotateX(0deg);
+    transition:0.2s ease-in-out all;
+    background:url("../images/mercurio.png");
+    background-size:contain;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+.mercurio-movimento{
+    -webkit-animation:shadow-mercurio 3s linear infinite;
+    animation:shadow-mercurio 3s linear infinite;
+}
+
+.img-venus-class{
+    width:9px;
+    height:9px;
+    position:relative;
+    float:left;
+    top:50%;
+    left:50%;
+    margin-top:-4.5px;
+    margin-left:-4.5px;
+    border-radius:100%;
+    transform:rotateX(0deg);
+    transition:0.2s ease-in-out all;
+    background:url("../images/venus.png");
+    background-size:contain;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+.venus-movimento{
+    -webkit-animation:shadow-venus 7.4s linear infinite;
+    animation:shadow-venus 7.4s linear infinite;
+}
+
+.img-terra-class{
+    width:10px;
+    height:10px;
+    position:relative;
+    float:left;
+    top:50%;
+    left:50%;
+    margin-top:-5px;
+    margin-left:-5px;
+    border-radius:100%;
+    transform:rotateX(0deg);
+    transition:0.2s ease-in-out all;
+    background:url("../images/terra.png");
+    background-size:contain;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+.terra-movimento{
+    -webkit-animation:shadow-terra 12s linear infinite;
+    animation:shadow-terra 12s linear infinite;
+}
+
+.img-lua-class{
+    width:4px;
+    height:4px;
+    position:relative;
+    float:left;
+    top:50%;
+    left:50%;
+    margin-top:-2px;
+    margin-left:-2px;
+    border-radius:100%;
+    transition:0.2s ease-in-out all;
+    background:url("../images/lua.png");
+    background-size:contain;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+.img-marte-class{
+    width:8px;
+    height:8px;
+    position:relative;
+    float:left;
+    top:50%;
+    left:50%;
+    margin-top:-4px;
+    margin-left:-4px;
+    border-radius:100%;
+    transform:rotateX(0deg);
+    transition:0.2s ease-in-out all;
+    background:url("../images/marte.png");
+    background-size:contain;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+.marte-movimento{
+    -webkit-animation:shadow-marte 22s linear infinite;
+    animation:shadow-marte 22s linear infinite;
+}
+
+.img-jupiter-class{
+    width:17px;
+    height:17px;
+    position:relative;
+    float:left;
+    top:50%;
+    left:50%;
+    margin-top:-8.5px;
+    margin-left:-8.5px;
+    border-radius:100%;
+    transform:rotateX(0deg);
+    transition:0.2s ease-in-out all;
+    background:url("../images/jupiter.png");
+    background-size:contain;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+.jupiter-movimento{
+    -webkit-animation:shadow-jupiter 142s linear infinite;
+    animation:shadow-jupiter 142s linear infinite;
+}
+
+.img-saturno-class{
+    width:14px;
+    height:14px;
+    position:relative;
+    float:left;
+    top:50%;
+    left:50%;
+    margin-top:-7px;
+    margin-left:-7px;
+    border-radius:100%;
+    transform:rotateX(0deg);
+    transition:0.2s ease-in-out all;
+    transform-style:preserve-3d;
+    background:url("../images/saturno.png");
+    background-size:contain;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+.saturno-movimento{
+    -webkit-animation:shadow-saturno 340s linear infinite;
+    animation:shadow-saturno 340s linear infinite;
+}
+
+.img-saturno-anel-1-class{
+    width:28px;
+    height:28px;
+    position:relative;
+    float:left;
+    top:50%;
+    left:50%;
+    margin-top:-15px;
+    margin-left:-15px;
+    border-radius:100%;
+    border:1px solid rgba(199,136,65,0.2);
+    transform:rotateX(90deg);
+    transition:0.2s ease-in-out all;
+    transform-style:preserve-3d;
+    opacity:1;
+}
+.img-saturno-anel-2-class{
+    width:20px;
+    height:20px;
+    position:relative;
+    float:left;
+    top:50%;
+    left:50%;
+    margin-top:-13px;
+    margin-left:-13px;
+    border-radius:100%;
+    border:3px solid rgba(199,136,65,0.5);
+    transform-style:preserve-3d;
+    opacity:1;
+}
+.img-urano-class{
+    width:12px;
+    height:12px;
+    position:relative;
+    float:left;
+    top:50%;
+    left:50%;
+    margin-top:-6px;
+    margin-left:-6px;
+    border-radius:100%;
+    transform:rotateX(0deg);
+    transition:0.2s ease-in-out all;
+    background:url("../images/urano.png");
+    background-size:contain;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+.urano-movimento{
+    -webkit-animation:shadow-urano 1000s linear infinite;
+    animation:shadow-urano 1000s linear infinite;
+}
+
+.img-netuno-class{
+    width:11px;
+    height:11px;
+    position:relative;
+    float:left;
+    top:50%;
+    left:50%;
+    margin-top:-5.5px;
+    margin-left:-5.5px;
+    border-radius:100%;
+    transform:rotateX(0deg);
+    transition:0.2s ease-in-out all;
+    background:url("../images/netuno.png");
+    background-size:contain;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+
+.img-netuno-inverted{
+    transform:rotateX(0deg) scaleX(-1);
+    background:url("../images/netuno_inverted.png");
+    background-size:contain;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+.netuno-movimento{
+    -webkit-animation:shadow-netuno 2000s linear infinite;
+    animation:shadow-netuno 2000s linear infinite;
+}
+
+
+.planetas-90deg{
+    transform:rotateX(90deg);
+    transition:0.2s ease-in-out all;
+}
+.planetas-0deg{
+    transform:rotateX(0deg);
+    transition:0.2s ease-in-out all;
+}
+
+.planeta-netuno-90deg-escala-negativa{
+    transform:rotateX(90deg) scaleX(-1);
+    transition:0.2s ease-in-out all;
+}
+.planeta-estilo-flat{
+    transform-style:flat;
+    transition:0.2s ease-in-out all;
+}
+
+.sistemaSolar-0deg{
+    transform:translate(-50%,-50%) rotateX(0deg);
+    transition:0.2s ease-in-out all;
+}
+.sistemaSolar-flat{
+    transform-style:flat;
+    transition:0.2s ease-in-out all;
+}
+
+.cont-infos-escalonavel{
+    width:auto;
+    height:auto;
+    display:block;
+    transform:scale(1,1);
+    transition:0.2s ease-in-out all;
+}
+
+.cont-infos-planetas{
+    width:auto;
+    height:auto;
+    position:absolute;
+    background-color:rgba(255,255,255,0.9);
+    text-align:center;
+    border-radius:5px;
+    opacity:0;
+    pointer-events:none;
+    transition:0.2s ease-in-out all;
+}
+
+.cont-infos-sol{
+    top:-25px;
+    right:-10px;
+}
+.cont-infos-mercurio{
+    top:-30px;
+    right:-15px;
+}
+.cont-infos-mercurio-parado{
+    top:-30px;
+    right:-15px;
+}
+
+.cont-infos-venus{
+    top:-30px;
+    right:-15px;
+}
+.cont-infos-venus-parado{
+    top:-30px;
+    right:-15px;
+}
+
+.cont-infos-terra{
+    top:-30px;
+    right:-15px;
+}
+.cont-infos-terra-parado{
+    top:-30px;
+    right:-15px;
+}
+
+.cont-infos-marte{
+    top:-30px;
+    right:-15px;
+}
+.cont-infos-marte-parado{
+    top:-30px;
+    right:-15px;
+}
+
+.cont-infos-jupiter{
+    top:-30px;
+    right:-15px;
+}
+.cont-infos-jupiter-parado{
+    top:-30px;
+    right:-15px;
+}
+
+.cont-infos-saturno{
+    top:-28px;
+    right:-12px;
+}
+.cont-infos-saturno-parado{
+    top:-28px;
+    right:-12px;
+}
+
+.cont-infos-urano{
+    top:-27px;
+    right:-12px;
+}
+.cont-infos-urano-parado{
+    top:-27px;
+    right:-12px;
+}
+
+.cont-infos-netuno{
+    top:-27px;
+    right:-13px;
+}
+.cont-infos-netuno-parado{
+    top:-27px;
+    right:-13px;
+}
+
+.escala-reduzida{
+    transform:scale(0.5, 0.5) translate(-15px, 30px);
+}
+
+.cont-infos-selecionado{
+    margin-top:0px;
+    opacity:1;
+    z-index:5;
+    pointer-events:none;
+}
+
+.box-infos-comp{
+    width:auto;
+    height:auto;
+    position:absolute;
+    opacity:1;
+    pointer-events:none;
+    transition:0.2s ease-in-out all;
+}
+
+.box-inverted{
+    transform:scaleX(-1);
+}
+
+.box-infos-desaparecer{
+    opacity:0;
+    transition:0.2s ease-in-out all;
+}
+
+.txt-planeta{
+    width:auto;
+    height:auto;
+    display:inline-block;
+    font-family:"Roboto Bold";
+    font-size:14px;
+    text-align:left;
+    letter-spacing:0.5px;
+    font-weight:500;
+    line-height:16px;
+    color:rgb(0,0,0);
+    padding:5px 5px 5px 5px;
+}
+
+.linha-separacao{
+    width:15px;
+    height:30px;
+    position:absolute;
+    top:0px;
+    left:0px;
+    border-top:1px solid white;
+    border-left:1px solid white;
+    transform: skew(-45deg, 0deg);
+    box-shadow: inset 1px 1px black;
+}
+.cont-todas-informacoes{
+    width:auto;
+    height:auto;
+    position:absolute;
+    top:-40px;
+    left:35px;
+}
+
+.texto-informacao{
+    width:auto;
+    height:auto;
+    display:block;
+    text-shadow: 1px 1px 2px black;
+}
+
+.nome-planeta{
+    margin:0px 0% 0px 0%;
+    font-family:"Roboto Regular";
+    font-size:20px;
+    line-height:20px;
+    font-weight:500;
+    text-align:left;
+    letter-spacing:0.5px;
+    color:white;
+    white-space: nowrap;
+}
+
+.valor-planeta{
+    margin:3px 0% 3px 0%;
+    font-family:"Roboto Regular";
+    font-size:30px;
+    line-height:30px;
+    font-weight:500;
+    text-align:left;
+    letter-spacing:0.5px;
+    color:white;
+    white-space: nowrap;
+}
+
+.dado-planeta{
+    margin:0px 0% 0px 0%;
+    font-family:"Roboto Regular";
+    font-size:18px;
+    line-height:18px;
+    font-weight:500;
+    text-align:left;
+    letter-spacing:0.5px;
+    color:white;
+    white-space: nowrap;
+}
+
+.invert-text{
+    transform:scaleX(-1);
+    text-align:right;
+}
+
+
+
+.sol-orbita-nova{
+    width:90px;
+    height:90px;
+    margin-top:-45px;
+    margin-left:-45px;
+    transition:0.2s ease-in-out all;
+}
+.sol-planeta-novo{
+    width:90px;
+    height:90px;
+    transition:0.2s ease-in-out all;
+}
+.mercurio-orbita-nova{
+    width:170px;
+    height:170px;
+    margin-top:-85px;
+    margin-left:-85px;
+    transition:0.2s ease-in-out all
+}
+.mercurio-planeta-novo{
+    width:26px;
+    height:26px;
+    margin-top:-13px;
+    margin-left:-13px;
+    transition:0.2s ease-in-out all;
+}
+.venus-orbita-nova{
+    width:240px;
+    height:240px;
+    margin-top:-120px;
+    margin-left:-120px;
+    transition:0.2s ease-in-out all;
+}
+.venus-planeta-novo{
+    width:32px;
+    height:32px;
+    margin-top:-16px;
+    margin-left:-16px;
+    transition:0.2s ease-in-out all;
+}
+.terra-orbita-nova{
+    width:340px;
+    height:340px;
+    margin-top:-170px;
+    margin-left:-170px;
+    transition:0.2s ease-in-out all;
+}
+.terra-planeta-novo{
+    width:34px;
+    height:34px;
+    margin-top:-17px;
+    margin-left:-17px;
+    transition:0.2s ease-in-out all;
+}
+.lua-orbita-nova{
+    width:50px;
+    height:50px;
+    margin-top:-25px;
+    margin-left:-25px;
+    transition:0.2s ease-in-out all;
+}
+.lua-planeta-novo{
+    width:12px;
+    height:12px;
+    margin-top:-6px;
+    margin-left:-6px;
+    transition:0.2s ease-in-out all;
+}
+.marte-orbita-nova{
+    width:515px;
+    height:515px;
+    margin-top:-257.5px;
+    margin-left:-257.5px;
+    transition:0.2s ease-in-out all;
+}
+.marte-planeta-novo{
+    width:29px;
+    height:29px;
+    margin-top:-14.5px;
+    margin-left:-14.5px;
+    transition:0.2s ease-in-out all;
+}
+.jupiter-orbita-nova{
+    width:750px;
+    height:750px;
+    margin-top:-375px;
+    margin-left:-375px;
+    transition:0.2s ease-in-out all;
+}
+.jupiter-planeta-novo{
+    width:65px;
+    height:65px;
+    margin-top:-32.5px;
+    margin-left:-32.5px;
+    transition:0.2s ease-in-out all;
+}
+.saturno-orbita-nova{
+    width:1000px;
+    height:1000px;
+    margin-top:-500px;
+    margin-left:-500px;
+    transition:0.2s ease-in-out all;
+}
+.saturno-planeta-novo{
+    width:62px;
+    height:62px;
+    margin-top:-31px;
+    margin-left:-31px;
+    transition:0.2s ease-in-out all;
+}
+.saturno-anel-1-planeta-novo{
+    width:105px;
+    height:105px;
+    margin-top:-54.5px;
+    margin-left:-54.5px;
+    border:2px solid rgba(199,136,65,0.2);
+    transition:0.2s ease-in-out all;
+}
+.saturno-anel-2-planeta-novo{
+    width:73px;
+    height:73px;
+    margin-top:-49px;
+    margin-left:-49px;
+    border:13px solid rgba(199,136,65,0.5);
+    transition:0.2s ease-in-out all;
+}
+.urano-orbita-nova{
+    width:1270px;
+    height:1270px;
+    margin-top:-635px;
+    margin-left:-635px;
+    transition:0.2s ease-in-out all;
+}
+.urano-planeta-novo{
+    width:56px;
+    height:56px;
+    margin-top:-28px;
+    margin-left:-28px;
+    transition:0.2s ease-in-out all;
+}
+.netuno-orbita-nova{
+    width:1600px;
+    height:1600px;
+    margin-top:-800px;
+    margin-left:-800px;
+    transition:0.2s ease-in-out all;
+}
+.netuno-planeta-novo{
+    width:50px;
+    height:50px;
+    margin-top:-25px;
+    margin-left:-25px;
+    transition:0.2s ease-in-out all;
+}
+
+
+
+@keyframes orbit{
+    0%{transform:rotateZ(0deg);}
+    100%{transform:rotateZ(-360deg);}
+}
+@keyframes orbit-lua{
+    0%{transform:rotateX(90deg) rotateY(0deg) rotateZ(0deg);}
+    100%{transform:rotateX(90deg) rotateY(0deg) rotateZ(-360deg);}
+}
+@keyframes inverse{
+    0%{transform:rotateX(-90deg) rotateY(360deg) rotateZ(0deg);}
+    100%{transform:rotateX(-90deg) rotateY(0deg) rotateZ(0deg);}
+}
+
+@keyframes shadow-mercurio{
+    0%{box-shadow: inset 0 3px 2px rgba(0, 0, 0, 0.5);}
+    25%{box-shadow: inset 16px 0 5px rgba(0, 0, 0, 0.5);}
+    50%{box-shadow: inset 94px -30px 40px rgba(0, 0, 0, 0.5);}
+    50.01%{box-shadow: inset -94px -30px 40px rgba(0, 0, 0, 0.5);}
+    75%{box-shadow: inset -16px 0 5px rgba(0, 0, 0, 0.5);}
+    100%{box-shadow: inset 0 3px 2px rgba(0, 0, 0, 0.5);}
+}
+@keyframes shadow-venus{
+    0%{box-shadow: inset 16px 0 5px rgba(0, 0, 0, 0.5);}
+    25%{box-shadow: inset 94px -30px 40px rgba(0, 0, 0, 0.5);}
+    25.01%{box-shadow: inset -94px -30px 40px rgba(0, 0, 0, 0.5);}
+    50%{box-shadow: inset -16px 0 5px rgba(0, 0, 0, 0.5);}
+    75%{box-shadow: inset 0 3px 2px rgba(0, 0, 0, 0.5);}
+    100%{box-shadow: inset 16px 0 5px rgba(0, 0, 0, 0.5);}
+}
+@keyframes shadow-terra{
+    0%{box-shadow: inset -16px 0 5px rgba(0, 0, 0, 0.5);}
+    25%{box-shadow: inset 0 3px 2px rgba(0, 0, 0, 0.5);}
+    50%{box-shadow: inset 16px 0 5px rgba(0, 0, 0, 0.5);}
+    75%{box-shadow: inset 94px -30px 40px rgba(0, 0, 0, 0.5);}
+    75.01%{box-shadow: inset -94px -30px 40px rgba(0, 0, 0, 0.5);}
+    100%{box-shadow: inset -16px 0 5px rgba(0, 0, 0, 0.5);}
+}
+@keyframes shadow-marte{
+    0%{box-shadow: inset 94px -30px 40px rgba(0, 0, 0, 0.5);}
+    0.01%{box-shadow: inset -94px -30px 40px rgba(0, 0, 0, 0.5);}
+    25%{box-shadow: inset -16px 0 5px rgba(0, 0, 0, 0.5);}
+    50%{box-shadow: inset 0 3px 2px rgba(0, 0, 0, 0.5);}
+    75%{box-shadow: inset 16px 0 5px rgba(0, 0, 0, 0.5);}
+    100%{box-shadow: inset 94px -30px 40px rgba(0, 0, 0, 0.5);}
+}
+@keyframes shadow-jupiter{
+    0%{box-shadow: inset 0 3px 2px rgba(0, 0, 0, 0.5);}
+    25%{box-shadow: inset 16px 0 5px rgba(0, 0, 0, 0.5);}
+    50%{box-shadow: inset 94px -30px 40px rgba(0, 0, 0, 0.5);}
+    50.01%{box-shadow: inset -94px -30px 40px rgba(0, 0, 0, 0.5);}
+    75%{box-shadow: inset -16px 0 5px rgba(0, 0, 0, 0.5);}
+    100%{box-shadow: inset 0 3px 2px rgba(0, 0, 0, 0.5);}
+}
+@keyframes shadow-saturno{
+    0%{box-shadow: inset 80px -30px 50px rgba(0, 0, 0, 0.5);}
+    0.01%{box-shadow: inset -94px -30px 40px rgba(0, 0, 0, 0.5);}
+    25%{box-shadow: inset -16px 0 5px rgba(0, 0, 0, 0.5);}
+    50%{box-shadow: inset -2px 3px 2px rgba(0, 0, 0, 0.5);}
+    75%{box-shadow: inset 16px 0 5px rgba(0, 0, 0, 0.5);}
+    100%{box-shadow: inset 80px -30px 50px rgba(0, 0, 0, 0.5);}
+}
+@keyframes shadow-urano{
+    0%{box-shadow: inset -8px 0 5px rgba(0, 0, 0, 0.5);}
+    25%{box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.5);}
+    50%{box-shadow: inset 8px 0 5px rgba(0, 0, 0, 0.5);}
+    75%{box-shadow: inset 40px -15px 40px rgba(0, 0, 0, 0.5);}
+    75.01%{box-shadow: inset -40px -15px 40px rgba(0, 0, 0, 0.5);}
+    100%{box-shadow: inset -8px 0 5px rgba(0, 0, 0, 0.5);}
+}
+@keyframes shadow-netuno{
+    0%{box-shadow: inset 12px 0 5px rgba(0, 0, 0, 0.5);}
+    25%{box-shadow: inset 50px -15px 40px rgba(0, 0, 0, 0.5);}
+    25.01%{box-shadow: inset -50px -15px 40px rgba(0, 0, 0, 0.5);}
+    50%{box-shadow: inset -12px 0 5px rgba(0, 0, 0, 0.5);}
+    75%{box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.5);}
+    100%{box-shadow: inset 12px 0 5px rgba(0, 0, 0, 0.5);}
+}
+
+@keyframes menu-selecionado{
+    0%{opacity:1;}
+    0.01%{opacity:0;}
+    99.99%{opacity:0;}
+    100%{opacity:1;}
+}
+
+@media only screen and (max-width:1081px){
+    
+    #menu-planetas-curiosidades{
+        display:none;
+    }
+    
+    .menu-itens-cont-mobile{
+        display:block;
+    }
+    
+    #titulo-planetario{
+        font-size:20px;
+        top:10%;
+    }
+    
+    #cont-btn-modo-2d-3d{
+        opacity:1;
+        display:none;
+    }
+    
+    #cont-btn-modo-zoom{
+        margin-top:0px;
+        opacity:1;
+    }
+    
+    #cont-btn-modo-metade, #btn-velocidade, #btn-tamanho, #btn-distancia{
+        opacity:1;
+    }
+    
+    .cont-funcionalidades-btns-direita{
+        opacity:1;
+        pointer-events:none;
+        top:0%;
+/*        top:-5%; PARA USAR COM O MODO DE 3D ATIVO NO MENU */
+        right:-40%;
+        padding: 5% 3% 5% 3%;
+        background-color:rgba(255,255,255,0.2);
+/*        right:-9%;*/
+        transform:scale(0.6) translate(0px, -60px);
+        border-top-left-radius:25px;
+        border-bottom-left-radius:25px;
+        border:2px solid #ffffff;
+        border-right:0px;
+        transition:0.2s ease-in-out all;
+        z-index:11;
+    }
+    
+    .cont-funcionalidades-btns-direita-aberto{
+        opacity:1;
+        pointer-events:all;
+        right:-9%;
+        transition:0.2s ease-in-out all;
+    }
+    
+    #cont-btns-baixo{
+        bottom:2%;
+    }
+    
+    .item-planeta{
+        margin:2px 2px 2px 2px;
+        font-size:14px;
+    }
+    
+    .cont-infos-escalonavel{
+        transform:scale(2,2) translate(-25%, 0px);
+    }
+    
+    .lightbox-curiosidades-class{
+        width:86%;
+        margin:0px 7% 50px 7%;
+    }
+    
+    #titulo-lightbox-curiosidades{
+        font-size:40px;
+        line-height:30px;
+    }
+    
+    #fechar-lightbox-curiosidades{
+        top:1%;
+    }
+    
+    .item-planeta-curiosidades{
+        font-size:16px;
+        line-height:200%;
+        margin:3% 20% 3% 20%;
+        display:block;
+        opacity:1;
+        color:white;
+    }
+    
+    .menu-planetas-curiosidades-mobile{
+        display:block;
+    }
+    
+    .menu-planetas-funcionalidades-mobile{
+        display:block;
+    }
+    
+    .box-imagem{
+        height:140px;
+    }
+    
+    .funcionalidades-fundo-funcao{
+        display:block;
+    }
+}
